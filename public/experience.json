@@ -42,19 +42,19 @@
     ]
   },
   {
-    "title": "Research Assistant/Web Developer",
+    "title": "Research Software Developer",
     "company": "University of Windsor",
     "time": "June 2020 - April 2023",
     "location": "Windsor, ON",
     "points": [
       {
-        "text": "Developing a <b>web application</b> for the analysis and presentation of experimental SAS data"
+        "text": "Developed a <b>web application</b> for the analysis and presentation of experimental SAS data"
       },
       {
         "text": "Achieved <b>100X faster compute time</b> of select elements"
       },
       {
-        "text": "Using <b>Flask, Bootstrap, NumPy, SciPy, and Matplotlib</b>"
+        "text": "Used <b>Python, Flask, Bootstrap, NumPy, SciPy, and Matplotlib</b>"
       }
     ]
   },
