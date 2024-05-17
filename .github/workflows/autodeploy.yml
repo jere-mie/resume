@@ -25,6 +25,8 @@ jobs:
         run: |
           bun install
           bun run build
+          # set custom domain by creating CNAME file
+          echo "resume.jeremie.bornais.ca" > dist/CNAME
 
       - name: Deploy to GitHub Pages
         if: success()
