@@ -19,7 +19,7 @@ jobs:
         node-version: '20'
 
     - name: Install dependencies
-      run: npm install html-pdf-chrome serve --save-dev
+      run: npm install puppeteer serve
 
     - name: Start local server
       run: |
@@ -27,9 +27,27 @@ jobs:
         echo "Waiting for server to start..."
         sleep 5
 
-    - name: Generate PDF of homepage
+    - name: Create PDF generation script
       run: |
-        npx html-pdf-chrome http://localhost:5000 --print-options '{"format": "letter"}' --output Bornais_Jeremie_Resume.pdf
+        cat <<EOF > generate-pdf.js
+        const puppeteer = require('puppeteer');
+
+        (async () => {
+          const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
+          const page = await browser.newPage();
+          await page.goto('http://localhost:5000', { waitUntil: 'networkidle0' });
+          await new Promise(res => setTimeout(res, 2000)); // Delay for 2 seconds
+          await page.pdf({
+            path: 'Bornais_Jeremie_Resume.pdf',
+            format: 'letter',
+            printBackground: true
+          });
+          await browser.close();
+        })();
+        EOF
+
+    - name: Generate PDF with Puppeteer
+      run: node generate-pdf.js
 
     - name: Prepare gh-pages branch content
       run: |
