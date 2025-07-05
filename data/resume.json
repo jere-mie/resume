@@ -41,7 +41,8 @@
             "location": "Troy, MI",
             "details": [
                 "Developed a full-stack web application using <b>React.js and Flask</b> for a client in the energy industry.",
-                "Released an Android application for connecting to an iOT device using <b>Kotlin</b>."
+                "Released an Android application for connecting to an iOT device using <b>Kotlin</b>.",
+                "Created a full-stack AI-powered web application using <b>Next.js, FastAPI, and PostgreSQL</b>."
             ]
         },
         {
@@ -162,6 +163,15 @@
                 "<b>REST API</b> created to enable developers to create applications for the UWindsor community",
                 "Serves course, staff and building data related to the University of Windsor",
                 "Made with <b>Go, Gin, and SQLX</b>"
+            ]
+        },
+        {
+            "title": "Automagic Websites",
+            "link": "https://github.com/jere-mie/automagic-websites",
+            "details": [
+                "Full stack web application featuring <b>user authentication</b>",
+                "Allows users to <b>create, host, and export</b> their own personal website",
+                "Made with <b>Python, Flask, SQLAlchemy, Bootstrap</b>"
             ]
         }
     ],

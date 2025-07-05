@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bornais_Jeremie_Resume</title>
     <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script src="static/alpine.min.js" defer></script>
     <script src="https://kit.fontawesome.com/22fc08ce26.js" crossorigin="anonymous"></script>
     <style>
@@ -126,7 +130,8 @@
                                     <b x-text="skill.category"></b>:
                                     <template x-for="(item, index) in skill.items" :key="index">
                                         <span>
-                                            <span x-text="item"></span><span x-show="index < skill.items.length - 1">, </span>
+                                            <span x-text="item"></span><span x-show="index < skill.items.length - 1">,
+                                            </span>
                                         </span>
                                     </template>
                                 </ul>
@@ -139,7 +144,8 @@
                         <ul>
                             <template x-for="(volunteer, index) in items" :key="index">
                                 <li>
-                                    - <b x-text="volunteer.title + ' | ' + volunteer.location"></b>: <span x-html="volunteer.description"></span>
+                                    - <b x-text="volunteer.title + ' | ' + volunteer.location"></b>: <span
+                                        x-html="volunteer.description"></span>
                                 </li>
                             </template>
                         </ul>
