@@ -4,13 +4,14 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repo
+    - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Setup Node.js
@@ -36,7 +37,7 @@ jobs:
           const browser = await puppeteer.launch({ headless: "new", args: ["--no-sandbox"] });
           const page = await browser.newPage();
           await page.goto('http://localhost:5000', { waitUntil: 'networkidle0' });
-          await new Promise(res => setTimeout(res, 2000)); // Delay for 2 seconds
+          await new Promise(res => setTimeout(res, 2000)); // Delay 2s
           await page.pdf({
             path: 'Bornais_Jeremie_Resume.pdf',
             format: 'letter',
@@ -54,6 +55,7 @@ jobs:
         mkdir gh-pages
         cp -r * gh-pages || true
         cp Bornais_Jeremie_Resume.pdf gh-pages/
+        rm -rf gh-pages/node_modules
 
     - name: Deploy to gh-pages branch
       uses: peaceiris/actions-gh-pages@v4
