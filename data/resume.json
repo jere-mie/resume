@@ -1,0 +1,185 @@
+{
+    "$schema": "resume.schema.json",
+    "info": {
+        "name": "Jeremie Bornais",
+        "email": "jeremiejbornais@gmail.com",
+        "phone": "(226) 350-2944",
+        "website": "jeremie.bornais.ca",
+        "github": "jere-mie",
+        "linkedin": "jeremie-bornais"
+    },
+    "tiny_text": "Bachelors of Computer Science (Honours), University of Windsor, September 2019 - October 2023, 97.25% GPA",
+    "education": [
+        {
+            "location": "University of Windsor",
+            "certification": "Bachelors of Computer Science (Honours)",
+            "start": "September 2019",
+            "end": "October 2023",
+            "details": [
+                "<b>97.40%</b> Major Average, <b>97.25%</b> Cumulative Average",
+                "Recipient of the President's Scholarship, Eleanor Catherine Wallace Memorial Scholarship, and Foresters Scholarship"
+            ]
+        }
+    ],
+    "experience": [
+        {
+            "title": "Software Developer",
+            "company": "Assent Inc.",
+            "start": "January 2022",
+            "end": "April 2022",
+            "location": "Ottawa, ON",
+            "details": [
+                "Developed front-end components with <b>Angular</b> and <b>SCSS</b> to meet design and accessibility standards.",
+                "Built and maintained API services using <b>C#</b> and <b>.NET Core</b>, following <b>test-driven development</b> practices."
+            ]
+        },
+        {
+            "title": "Software Engineer",
+            "company": "RIIS LLC",
+            "start": "January 2024",
+            "end": "September 2024",
+            "location": "Troy, MI",
+            "details": [
+                "Developed a full-stack web application using <b>React.js and Flask</b> for a client in the energy industry.",
+                "Released an Android application for connecting to an iOT device using <b>Kotlin</b>."
+            ]
+        },
+        {
+            "title": "Software Engineer Intern",
+            "company": "Publicis Sapient",
+            "start": "June 2022",
+            "end": "August 2022",
+            "location": "Toronto, ON",
+            "details": [
+                "Created and deployed a <b>GraphQL</b> API using <b>Java, Spring Boot, and PostgreSQL</b> for a personal budgeting mobile app.",
+                "Used <b>GitHub Actions</b> to set up automated <b>CI/CD</b> workflows."
+            ]
+        },
+        {
+            "title": "Software Developer Intern",
+            "company": "Assent Inc.",
+            "start": "January 2022",
+            "end": "April 2022",
+            "location": "Ottawa, ON",
+            "details": [
+                "Used <b>Angular and SCSS</b> to create and update front-end components, adhering to strict styling standards.",
+                "Used <b>C# and .NET Core</b> to create API endpoints, unit tests, component tests, and integration tests."
+            ]
+        },
+        {
+            "title": "Software Developer Intern",
+            "company": "Green Shield Canada",
+            "start": "May 2021",
+            "end": "August 2021",
+            "location": "Windsor, ON",
+            "details": [
+                "Used <b>Oracle PL/SQL</b> to create Data Reports and Extracts"
+            ]
+        },
+        {
+            "title": "Research Software Developer",
+            "company": "University of Windsor",
+            "start": "June 2020",
+            "end": "April 2023",
+            "location": "Windsor, ON",
+            "details": [
+                "Developed a <b>web application</b> for the analysis and presentation of experimental SAS data",
+                "Achieved <b>100X faster compute time</b> of select elements",
+                "Using <b>Flask, Bootstrap, NumPy, SciPy, and Matplotlib</b>"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "category": "Programming",
+            "items": [
+                "Python",
+                "JavaScript",
+                "TypeScript",
+                "C#",
+                "Go",
+                "Java",
+                "HTML",
+                "CSS",
+                "SCSS",
+                "C++",
+                "SQL",
+                "C",
+                "Ruby"
+            ]
+        },
+        {
+            "category": "Frameworks",
+            "items": [
+                "Angular",
+                ".NET Core",
+                "Flask",
+                "React.js",
+                "React Native",
+                "Svelte",
+                "Spring Boot",
+                "Bootstrap"
+            ]
+        },
+        {
+            "category": "Technologies",
+            "items": [
+                "Git",
+                "Linux",
+                "Docker",
+                "Caddy Server",
+                "GraphQL",
+                "REST API",
+                "OAuth2",
+                "CI/CD",
+                "GitHub Actions"
+            ]
+        },
+        {
+            "category": "Cloud",
+            "items": [
+                "Google Cloud Platform",
+                "Microsoft Azure",
+                "Amazon Web Services",
+                "DigitalOcean"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "Easy-MASM",
+            "link": "https://github.com/jere-mie/easy-masm",
+            "details": [
+                "Automated system for assembling, linking, and executing <b>MASM32</b> programs",
+                "Used by over <b>500 students</b>",
+                "Made with <b>Docker, bash and batch</b>"
+            ]
+        },
+        {
+            "title": "UWindsor API",
+            "link": "https://github.com/jere-mie/uwindsor-api",
+            "details": [
+                "<b>REST API</b> created to enable developers to create applications for the UWindsor community",
+                "Serves course, staff and building data related to the University of Windsor",
+                "Made with <b>Go, Gin, and SQLX</b>"
+            ]
+        }
+    ],
+    "volunteering": [
+        {
+            "title": "President",
+            "description": "Led a team of 20 volunteers to create applications, organize events, and represent over 900 undergraduate students (2021-2023)",
+            "location": "UWindsor Computer Science Society"
+        },
+        {
+            "title": "Co-Founder and Technical Lead",
+            "description": "Co-founded and created website for MLH Hackathon (winhacks.ca) (2020-2022)",
+            "location": "WinHacks"
+        },
+        {
+            "title": "Co-Founder and Technical Lead",
+            "description": "Co-founded and created website for MLH Hackathon (borderhacks.com) (2020-2021)",
+            "location": "BorderHacks"
+        }
+    ]
+}
