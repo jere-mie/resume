@@ -155,9 +155,11 @@
                         <hr class="section-divider">
                         <template x-for="(project, index) in items" :key="index">
                             <div class="project">
-                                <h4 :href="project.link" target="_blank">
-                                    <i class="fa fa-github"></i>
-                                    <span x-text="project.title"></span>
+                                <h4>
+                                    <a :href="project.link" target="_blank">
+                                        <i class="fa fa-github"></i>
+                                        <span x-text="project.title"></span>
+                                    </a>
                                 </h4>
                                 <ul>
                                     <template x-for="(detailLine, index) in project.details" :key="index">
