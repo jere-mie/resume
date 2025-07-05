@@ -53,9 +53,13 @@ jobs:
     - name: Prepare gh-pages branch content
       run: |
         mkdir gh-pages
-        cp -r * gh-pages || true
+        rsync -av --exclude=node_modules \
+                  --exclude=gh-pages \
+                  --exclude=package.json \
+                  --exclude=package-lock.json \
+                  --exclude=generate-pdf.js \
+                  ./ ./gh-pages/
         cp Bornais_Jeremie_Resume.pdf gh-pages/
-        rm -rf gh-pages/node_modules
 
     - name: Deploy to gh-pages branch
       uses: peaceiris/actions-gh-pages@v4
