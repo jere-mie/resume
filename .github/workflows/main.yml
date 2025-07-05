@@ -1,0 +1,46 @@
+name: Build PDF and Deploy to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install html-pdf-chrome serve --save-dev
+
+    - name: Start local server
+      run: |
+        npx serve . -l 5000 &
+        echo "Waiting for server to start..."
+        sleep 5
+
+    - name: Generate PDF of homepage
+      run: |
+        npx html-pdf-chrome http://localhost:5000 --print-options '{"format": "letter"}' --output Bornais_Jeremie_Resume.pdf
+
+    - name: Prepare gh-pages branch content
+      run: |
+        mkdir gh-pages
+        cp -r * gh-pages || true
+        cp Bornais_Jeremie_Resume.pdf gh-pages/
+
+    - name: Deploy to gh-pages branch
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./gh-pages
+        publish_branch: gh-pages
+        force_orphan: true
