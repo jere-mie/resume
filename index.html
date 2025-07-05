@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bornais_Jeremie_Resume</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="static/alpine.min.js" defer></script>
+    <script src="https://kit.fontawesome.com/22fc08ce26.js" crossorigin="anonymous"></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body x-data>
+    <main>
+        <template x-if="!$store.resume.loaded">
+            <h1>Loading Resume...</h1>
+        </template>
+    </main>
+    <!-- header -->
+    <template x-if="$store.resume.loaded">
+        <div>
+            <header x-data="{info: $store.resume.data.info}">
+                <h1 x-show="info.name" x-text="info.name"></h1>
+                <div class="links">
+                    <span x-show="info.email">
+                        <i class="fa fa-envelope"></i>
+                        <a :href="`mailto:${info.email}`" target="_blank" x-text="info.email"></a>
+                    </span>
+
+                    <span x-show="info.phone">
+                        <i class="fa fa-phone"></i>
+                        <span x-text="info.phone"></span>
+                    </span>
+
+                    <span x-show="info.website">
+                        <i class="fa fa-link"></i>
+                        <a :href="`https://${info.website}`" target="_blank" x-text="info.website"></a>
+                    </span>
+
+                    <span x-show="info.github">
+                        <i class="fa fa-github"></i>
+                        <a :href="`https://github.com/${info.github}`" target="_blank" x-text="info.github"></a>
+                    </span>
+
+                    <span x-show="info.linkedin">
+                        <i class="fa fa-linkedin"></i>
+                        <a :href="`https://linkedin.com/in/${info.linkedin}`" target="_blank"
+                            x-text="info.linkedin"></a>
+                    </span>
+                </div>
+            </header>
+            <section name="tiny_text" x-data="{ tiny_text: $store.resume.data.tiny_text }">
+                <p class="tiny" x-text="tiny_text"></p>
+            </section>
+            <main>
+                <div style="width: 50%;">
+                    <section name="experience" x-data="{ items: $store.resume.data.experience }">
+                        <h2>Experience</h2>
+                        <hr class="section-divider">
+                        <template x-for="(position, index) in items" :key="index">
+                            <div class="job">
+                                <h3 x-text="position.title"></h3>
+                                <h4 x-text="position.company"></h4>
+                                <div class="icon-row">
+                                    <span>
+                                        <i class="fa fa-calendar"></i>
+                                        <span x-text="position.start"></span>
+                                        <span x-show="position.end"> - </span>
+                                        <span x-show="position.end" x-text="position.end"></span>
+                                    </span>
+                                    <span x-show="position.location">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span x-text="position.location"></span>
+                                    </span>
+                                </div>
+                                <ul>
+                                    <template x-for="(detailLine, index) in position.details" :key="index">
+                                        <li>
+                                            - <span x-html="detailLine"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <hr class="dotted-separator" x-show="index < items.length - 1">
+                            </div>
+                        </template>
+                    </section>
+                </div>
+                <div style="width: 45%;">
+                    <section name="education" x-data="{ items: $store.resume.data.education }">
+                        <h2>Education</h2>
+                        <hr class="section-divider">
+                        <template x-for="(education, index) in items" :key="index">
+                            <div class="education">
+                                <h3 x-text="education.certification"></h3>
+                                <h4 x-text="education.location"></h4>
+                                <div class="icon-row">
+                                    <span>
+                                        <i class="fa fa-calendar"></i>
+                                        <span x-text="education.start"></span>
+                                        <span x-show="education.end"> - </span>
+                                        <span x-show="education.end" x-text="education.end"></span>
+                                    </span>
+                                </div>
+                                <ul>
+                                    <template x-for="(detailLine, index) in education.details" :key="index">
+                                        <li>
+                                            - <span x-html="detailLine"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <hr class="dotted-separator" x-show="index < items.length - 1">
+                            </div>
+                        </template>
+                    </section>
+                    <section name="skills" x-data="{ items: $store.resume.data.skills }">
+                        <h2>Skills</h2>
+                        <hr class="section-divider">
+                        <ul>
+                            <template x-for="(skill, index) in items" :key="index">
+                                <ul class="skill">
+                                    <b x-text="skill.category"></b>:
+                                    <template x-for="(item, index) in skill.items" :key="index">
+                                        <span>
+                                            <span x-text="item"></span><span x-show="index < skill.items.length - 1">,
+                                            </span>
+                                        </span>
+                                    </template>
+                                </ul>
+                            </template>
+                        </ul>
+                    </section>
+                    <section name="volunteering" x-data="{ items: $store.resume.data.volunteering }">
+                        <h2>Volunteering</h2>
+                        <hr class="section-divider">
+                        <ul>
+                            <template x-for="(volunteer, index) in items" :key="index">
+                                <li>
+                                    - <b x-text="volunteer.title + ' | ' + volunteer.location"></b>: <span
+                                        x-html="volunteer.description"></span>
+                                </li>
+                            </template>
+                        </ul>
+                    </section>
+                    <section name="projects" x-data="{ items: $store.resume.data.projects }">
+                        <h2>Projects</h2>
+                        <hr class="section-divider">
+                        <template x-for="(project, index) in items" :key="index">
+                            <div class="project">
+                                <h4>
+                                    <a :href="project.link" target="_blank">
+                                        <i class="fa fa-github"></i>
+                                        <span x-text="project.title"></span>
+                                    </a>
+                                </h4>
+                                <ul>
+                                    <template x-for="(detailLine, index) in project.details" :key="index">
+                                        <li>
+                                            - <span x-html="detailLine"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                                <hr class="dotted-separator" x-show="index < items.length - 1">
+                            </div>
+                        </template>
+                    </section>
+                </div>
+            </main>
+        </div>
+    </template>
+
+    <script>
+        document.addEventListener('alpine:init', async () => {
+            Alpine.store('resume', {
+                loaded: false,
+                data: {}
+            });
+            const response = await fetch('/data/resume.json');
+            const data = await response.json();
+            console.log(data);
+            Alpine.store('resume').data = data;
+            Alpine.store('resume').loaded = true;
+        });
+    </script>
+</body>
+
+</html>
