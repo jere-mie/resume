@@ -2,7 +2,7 @@
     "$schema": "resume.schema.json",
     "info": {
         "name": "Jeremie Bornais",
-        "email": "jeremiejbornais@gmail.com",
+        "email": "jeremiedevelops@gmail.com",
         "phone": "(226) 350-2944",
         "website": "jeremie.bornais.ca",
         "github": "jere-mie",
@@ -25,8 +25,8 @@
         {
             "title": "Software Developer",
             "company": "Assent Inc.",
-            "start": "January 2022",
-            "end": "April 2022",
+            "start": "September 2024",
+            "end": "Present",
             "location": "Ottawa, ON",
             "details": [
                 "Developed front-end components with <b>Angular</b> and <b>SCSS</b> to meet design and accessibility standards.",
